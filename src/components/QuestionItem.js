@@ -13,21 +13,7 @@ function QuestionItem({ question, onDeleteQuestion, onUpdateQuestion }) {
     </option>
   ));
 
-  // function handleChange(event) {
-  //   const newIndex = parseInt(event.target.value);
 
-  //   fetch(`http://localhost:4000/questions/${question.id}`, {
-  //     method: "PATCH",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       "correctIndex": newIndex
-  //     }),
-  //   })
-  //     .then((r) => r.json())
-  //     .then((updatedQuestion) => onUpdateQuestion(updatedQuestion));
-  // }
   function handleChange(event) {
     const newIndex = parseInt(event.target.value);
     fetch(`http://localhost:4000/questions/${id}`, {
@@ -44,7 +30,7 @@ function QuestionItem({ question, onDeleteQuestion, onUpdateQuestion }) {
 
 
   function handleDeleteClick() {
-    // Call onDeleteItem, passing the deleted item
+    
     fetch(`http://localhost:4000/questions/${question.id}`, {
       method: "DELETE",
     })
